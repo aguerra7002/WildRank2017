@@ -156,31 +156,31 @@
             android:id="@+id/auto_portcullis_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="44dp"
             app:label="Portcullis Reached"
             app:key="auto-portcullis_reach"/>
-
-        <org.wildstang.wildrank.androidv2.views.scouting.ScoutingCheckboxView
-            android:id="@+id/auto_moat_reach"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            app:label="Moat Reached"
-            app:key="auto-moat_reach"/>
 
         <org.wildstang.wildrank.androidv2.views.scouting.ScoutingCheckboxView
             android:id="@+id/auto_quad_ramp_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="44dp"
             app:label="Quad Ramp Reached"
             app:key="auto-quadRamp_reach"/>
+
+        <org.wildstang.wildrank.androidv2.views.scouting.ScoutingCheckboxView
+            android:id="@+id/auto_moat_reach"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            app:label="Moat Reached"
+            app:key="auto-moat_reach"/>
 
         <org.wildstang.wildrank.androidv2.views.scouting.ScoutingCheckboxView
             android:id="@+id/auto_sallyport_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Sallyport Reached"
             app:key="auto-sallyport_reach"/>
 
@@ -188,7 +188,7 @@
             android:id="@+id/auto_drawbridge_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Drawbridge Reached"
             app:key="auto-drawbridge_reach"/>
 
@@ -196,7 +196,7 @@
             android:id="@+id/auto_rough_terrain_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Rough Terrain Reached"
             app:key="auto-roughTerrain_reach"/>
 
@@ -204,7 +204,7 @@
             android:id="@+id/auto_rock_wall_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Rock Wall Reached"
             app:key="auto-rockWall_reach"/>
 
@@ -212,7 +212,7 @@
             android:id="@+id/auto_ramparts_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Ramparts Reached"
             app:key="auto-ramparts_reach"/>
 
@@ -220,7 +220,7 @@
             android:id="@+id/auto_low_bar_reach"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="51dp"
             app:label="Low Bar Reached"
             app:key="auto-lowBar_reach"/>
     </LinearLayout>

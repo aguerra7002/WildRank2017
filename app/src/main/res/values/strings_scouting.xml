@@ -119,7 +119,7 @@
         <item>Other???</item>
     </string-array>
 
-    <string name="autonomous_explanation">Number of defense Crosses and goals scored</string>
+    <string name="autonomous_explanation">Number of defense crosses and goals scored in autonomous mode</string>
     <string name="match">Teleop</string>
     <string name="button_finish">Finish</string>
     <string name="stack_help">Help</string>

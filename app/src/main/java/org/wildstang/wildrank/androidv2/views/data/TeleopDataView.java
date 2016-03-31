@@ -1,9 +1,12 @@
 package org.wildstang.wildrank.androidv2.views.data;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -11,6 +14,7 @@ import android.view.View;
 
 import com.couchbase.lite.Document;
 
+import org.wildstang.wildrank.androidv2.R;
 import org.wildstang.wildrank.androidv2.models.MatchModel;
 
 import java.util.ArrayList;
@@ -23,6 +27,16 @@ public class TeleopDataView extends View {
     private List<Document> matchDocs;
 
     Paint textPaint, boulderPaint, scaledPaint, scoredPaint, notScoredPaint, outlinePaint, smallTextPaint, idlePaint;
+
+    Bitmap lowBar;
+    Bitmap portcullis;
+    Bitmap moat;
+    Bitmap ramparts;
+    Bitmap drawBridge;
+    Bitmap sallyPort;
+    Bitmap roughTerrain;
+    Bitmap rockWall;
+    Bitmap quadRamp;
 
 
     public TeleopDataView(Context context, AttributeSet attrs) {
@@ -44,6 +58,15 @@ public class TeleopDataView extends View {
         notScoredPaint.setColor(Color.argb(150, 255, 0, 0));
         idlePaint = new Paint();
         idlePaint.setColor(Color.argb(150, 0, 0, 255));
+        lowBar = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.lowbar);
+        portcullis = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.portcullis);
+        moat = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.moat);
+        ramparts = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.ramparts);
+        drawBridge = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.drawbridge);
+        sallyPort = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sallyport);
+        roughTerrain = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.roughterrain);
+        rockWall = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.rockwall);
+        quadRamp = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.quadramp);
     }
 
     public void acceptNewTeamData(List<Document> matchDocs) {
@@ -132,6 +155,8 @@ public class TeleopDataView extends View {
 
                 Integer lowBarCrosses = (Integer) data.get("teleop-lowBar");
                 int currentHeight = 300;
+
+                c.drawBitmap(lowBar, new Rect(0,0, lowBar.getWidth(), lowBar.getHeight()), new Rect((int) scaledAt(.5, x, matchNum), 260, 50, 50), scoredPaint);
                 c.drawText("LB: " + lowBarCrosses.toString(), (float) scaledAt(.5, x, matchNum), 260, textPaint);
                 if ((boolean) data.get("defense-portcullis")) {
                     Integer PCCrosses = (Integer) data.get("teleop-portcullis");

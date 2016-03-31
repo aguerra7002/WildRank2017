@@ -64,7 +64,6 @@ public class MatchStrategyFragment extends Fragment {
             Document matchDoc = DatabaseManager.getInstance(getContext()).getMatchFromKey(mMatchKey);
             Object[] teamObjects = Utilities.getTeamsFromMatchDocument(matchDoc);
             String[] teamKeys = Arrays.copyOf(teamObjects, teamObjects.length, String[].class);
-
             for (int i = 0; i < mStrategyViews.size(); i++) {
                 mStrategyViews.get(i).populateFromTeamDocuments(TeamDocumentsModel.from(getContext(), teamKeys[i]));
             }

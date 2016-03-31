@@ -19,8 +19,8 @@ public class TeamSummariesAutoFragment extends TeamSummariesFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_teleop, container, false);
-        view = (AutoDataView) v.findViewById(R.id.teleopview);
+        View v = inflater.inflate(R.layout.fragment_auto, container, false);
+        view = (AutoDataView) v.findViewById(R.id.autoview);
         v.findViewById(R.id.stack_view_help).setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("Help");
