@@ -144,6 +144,10 @@ public class MatchScoutingMainFragment extends Fragment implements View.OnClickL
         for (Iterator<QueryRow> it = enumerator; it.hasNext(); ) {
             QueryRow row = it.next();
             queryRows.add(row);
+
+        }
+        for (int i = 132; i >=0; i-=2) {
+            queryRows.remove(i);
         }
 
         Parcelable state = list.onSaveInstanceState();

@@ -38,7 +38,7 @@ public class TeamStrategyView extends View {
     private double averageSallyportCrosses;
     private double averageRockWallCrosses;
     private double averageRoughTerrainCrosses;
-    ArrayList<Double> averages = new ArrayList<Double>();
+    ArrayList<Integer> averages = new ArrayList<Integer>();
     ArrayList<String> bestDefenses = new ArrayList<String>();
 
     private int highGoalMade = 0;
@@ -147,27 +147,27 @@ public class TeamStrategyView extends View {
                 averages.clear();
             }
 
-            averageLowBarCrosses = getAverageCrosses(lowBarCrosses, matches);
-            averagePortcullisCrosses = getAverageCrosses(portcullisCrosses, portcullisMatches);
-            averageQuadRampCrosses = getAverageCrosses(quadRampCrosses, quadRampMatches);
-            averageMoatCrosses = getAverageCrosses(moatCrosses, moatMatches);
-            averageRampartsCrosses = getAverageCrosses(rampartsCrosses, rampartsMatches);
-            averageDrawbridgeCrosses = getAverageCrosses(drawbridgeCrosses, drawbridgeMatches);
-            averageSallyportCrosses = getAverageCrosses(sallyportCrosses, sallyportMatches);
-            averageRockWallCrosses = getAverageCrosses(rockWallCrosses, rockWallMatches);
-            averageRoughTerrainCrosses = getAverageCrosses(roughTerrainCrosses, roughTerrainMatches);
+//            averageLowBarCrosses = getAverageCrosses(lowBarCrosses, matches);
+//            averagePortcullisCrosses = getAverageCrosses(portcullisCrosses, portcullisMatches);
+//            averageQuadRampCrosses = getAverageCrosses(quadRampCrosses, quadRampMatches);
+//            averageMoatCrosses = getAverageCrosses(moatCrosses, moatMatches);
+//            averageRampartsCrosses = getAverageCrosses(rampartsCrosses, rampartsMatches);
+//            averageDrawbridgeCrosses = getAverageCrosses(drawbridgeCrosses, drawbridgeMatches);
+//            averageSallyportCrosses = getAverageCrosses(sallyportCrosses, sallyportMatches);
+//            averageRockWallCrosses = getAverageCrosses(rockWallCrosses, rockWallMatches);
+//            averageRoughTerrainCrosses = getAverageCrosses(roughTerrainCrosses, roughTerrainMatches);
 
-            averages.add(averageLowBarCrosses);
-            averages.add(averagePortcullisCrosses);
-            averages.add(averageQuadRampCrosses);
-            averages.add(averageRampartsCrosses);
-            averages.add(averageMoatCrosses);
-            averages.add(averageDrawbridgeCrosses);
-            averages.add(averageSallyportCrosses);
-            averages.add(averageRockWallCrosses);
-            averages.add(averageRoughTerrainCrosses);
+            averages.add(lowBarCrosses);
+            averages.add(portcullisCrosses);
+            averages.add(quadRampCrosses);
+            averages.add(rampartsCrosses);
+            averages.add(moatCrosses);
+            averages.add(drawbridgeCrosses);
+            averages.add(sallyportCrosses);
+            averages.add(rockWallCrosses);
+            averages.add(roughTerrainCrosses);
             getBestDefenses(averages, 3);
-            System.out.println(bestDefenses.toString());
+            //System.out.println(bestDefenses.toString());
 //            ((TextView) findViewById(R.id.high_goal_made)).setText("High Made: " + formatNumberAsString(highGoalMade));
 //            ((TextView) findViewById(R.id.high_goal_missed)).setText("High Missed: " + formatNumberAsString(highGoalMissed));
 //            ((TextView) findViewById(R.id.low_goal_made)).setText("Low Made: " + formatNumberAsString(lowGoalMade));
@@ -228,41 +228,41 @@ public class TeamStrategyView extends View {
                 c.drawText(lowGoalMissed + "", 345, 88, smallTextPaint);
             }
 
-            c.drawText("A: Portcullis: " + formatNumberAsString(averagePortcullisCrosses), 5, 140, textPaint);
-            c.drawText("Quad Ramp: " + formatNumberAsString(averageQuadRampCrosses), 225, 140, textPaint);
-            c.drawText("B: Ramparts: " + formatNumberAsString(averageRampartsCrosses), 5, 170, textPaint);
-            c.drawText("Moat: " + formatNumberAsString(averageMoatCrosses), 225, 170, textPaint);
-            c.drawText("C: Drawbrdg.: " + formatNumberAsString(averageDrawbridgeCrosses), 5, 200, textPaint);
-            c.drawText("Sallyport: " + formatNumberAsString(averageSallyportCrosses), 225, 200, textPaint);
-            c.drawText("D: Rock Wall: " + formatNumberAsString(averageRockWallCrosses), 5, 230, textPaint);
-            c.drawText("Rough Trn.: " + formatNumberAsString(averageRoughTerrainCrosses), 225, 230, textPaint);
-            c.drawText("Low Bar: " + formatNumberAsString(averageLowBarCrosses), 115, 260, textPaint);
+            c.drawText("A: Portcullis: " + formatNumberAsString(portcullisCrosses), 5, 140, textPaint);
+            c.drawText("Quad Ramp: " + formatNumberAsString(quadRampCrosses), 225, 140, textPaint);
+            c.drawText("B: Ramparts: " + formatNumberAsString(rampartsCrosses), 5, 170, textPaint);
+            c.drawText("Moat: " + formatNumberAsString(moatCrosses), 225, 170, textPaint);
+            c.drawText("C: Drawbrdg.: " + formatNumberAsString(drawbridgeCrosses), 5, 200, textPaint);
+            c.drawText("Sallyport: " + formatNumberAsString(sallyportCrosses), 225, 200, textPaint);
+            c.drawText("D: Rock Wall: " + formatNumberAsString(rockWallCrosses), 5, 230, textPaint);
+            c.drawText("Rough Trn.: " + formatNumberAsString(roughTerrainCrosses), 225, 230, textPaint);
+            c.drawText("Low Bar: " + formatNumberAsString(lowBarCrosses), 115, 260, textPaint);
 
-            if (bestDefenses.contains(StrongholdConstants.PORTCULLIS)) {
+            if (bestDefenses.contains(StrongholdConstants.PORTCULLIS) && portcullisCrosses > 0) {
                 c.drawRect(5, 117, 215, 143, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.QUAD_RAMP)) {
+            if (bestDefenses.contains(StrongholdConstants.QUAD_RAMP) && quadRampCrosses > 0) {
                 c.drawRect(220, 117, 420, 143, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.RAMPARTS)) {
+            if (bestDefenses.contains(StrongholdConstants.RAMPARTS) && rampartsCrosses > 0) {
                 c.drawRect(5, 147, 215, 173, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.MOAT)) {
+            if (bestDefenses.contains(StrongholdConstants.MOAT) && moatCrosses > 0) {
                 c.drawRect(220, 147, 420, 173, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.DRAWBRIDGE)) {
+            if (bestDefenses.contains(StrongholdConstants.DRAWBRIDGE) && drawbridgeCrosses > 0) {
                 c.drawRect(5, 177, 215, 203, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.SALLYPORT)) {
+            if (bestDefenses.contains(StrongholdConstants.SALLYPORT) && sallyportCrosses > 0) {
                 c.drawRect(220, 177, 420, 203, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.ROCK_WALL)) {
+            if (bestDefenses.contains(StrongholdConstants.ROCK_WALL) && rockWallCrosses > 0) {
                 c.drawRect(5, 207, 215, 233, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.ROUGH_TERRAIN)) {
+            if (bestDefenses.contains(StrongholdConstants.ROUGH_TERRAIN) && roughTerrainCrosses > 0) {
                 c.drawRect(220, 207, 420, 233, idlePaint);
             }
-            if (bestDefenses.contains(StrongholdConstants.LOW_BAR)) {
+            if (bestDefenses.contains(StrongholdConstants.LOW_BAR) && lowBarCrosses > 0) {
                 c.drawRect(112, 237, 322, 263, idlePaint);
             }
 
@@ -302,10 +302,10 @@ public class TeamStrategyView extends View {
         }
     }
 
-    private void getBestDefenses(ArrayList<Double> a, int cyclesToGo) {
+    private void getBestDefenses(ArrayList<Integer> a, int cyclesToGo) {
 
         int cycles = cyclesToGo - 1;
-        Double max = -2d;
+        Integer max = -2;
         int index = -1;
         for (int i = 0; i < a.size(); i++) {
             if (a.get(i) > max) {
@@ -314,7 +314,7 @@ public class TeamStrategyView extends View {
             }
         }
         bestDefenses.add(getString(index));
-        a.set(index, -1d);
+        a.set(index, -1);
         if (cycles != 0) {
             getBestDefenses(a, cycles);
         }

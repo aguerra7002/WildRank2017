@@ -94,7 +94,7 @@ public class TeamSummariesInfoFragment extends TeamSummariesFragment {
                     loadTeamImageFromStream(attachment.getContent());
                 }
             }*/
-            File image = new File(Environment.getExternalStorageDirectory().getPath() + "/wildrank/" + teamNumber + ".jpg");
+            File image = new File(Environment.getExternalStorageDirectory().getPath() + "/wildrank/" + teamNumber + ".png");
             if (image.exists()) {
                 bitmap = BitmapFactory.decodeFile(image.toString());
                 loadTeamImageFromStream();

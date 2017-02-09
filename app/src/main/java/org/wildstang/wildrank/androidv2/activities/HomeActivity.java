@@ -193,6 +193,7 @@ public class HomeActivity extends AppCompatActivity {
             case TEAM_SUMMARIES:
                 // Team Summaries
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TeamSummariesMainFragment()).commit();
+
                 break;
             default:
                 break;
